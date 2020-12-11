@@ -1,23 +1,109 @@
+body {
+    @apply flex bg-pink-50;
+}
+
+
 /* 
 =====================================
 Navigation
 =====================================
 */
-#main-nav {
-    @apply h-screen overflow-y-scroll overflow-x-hidden w-1/5;
-    #logo {
+.side-nav,
+.side-nav-whitespace {
+    @apply h-screen flex-none;
+    min-width: 250px;
+}
+.side-nav {
+    @apply bg-pink-700 text-white fixed /*overflow-y-scroll*/ overflow-y-hidden overflow-x-hidden;
+    .title {
         @apply px-6 py-8 font-bold text-lg;
     }
-}
-.nav-links {
-    ul {
-        a {
-            li {
-                @apply py-4 px-6 font-bold bg-gray-50 text-gray-800 duration-700;
-                &:hover {
-                    @apply bg-gray-100;
+    .nav-links {
+        ul {
+            a {
+                li {
+                    @apply py-4 px-6 font-bold bg-pink-700 duration-700;
+                    &:hover {
+                        @apply bg-pink-800;
+                    }
+                }
+                &.selected {
+                    li {
+                        @apply bg-pink-800;
+                    }
                 }
             }
         }
     }
+}
+#main-nav {
+    @apply bg-pink-800 text-white shadow-xl;
+    .nav-links {
+        ul {
+            a {
+                li {
+                    @apply bg-pink-800;
+                    &:hover {
+                        @apply bg-pink-900;
+                    }
+                }
+                &.selected {
+                    li {
+                        @apply bg-pink-900;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 
+=====================================
+Content
+=====================================
+*/
+main.content {
+    margin-left: 0px;
+    @apply pl-16 pr-12 pt-8 pb-20;
+    .bucket {
+        @apply flex mb-6;
+        .bucket-label {
+            @apply w-1/4;
+        }
+        .bucket-content {
+            @apply w-3/4 pl-6;
+        }
+    }
+    img.note {
+        width: 500px;
+    }
+    .notebook {
+        @apply border-4 border-pink-800 px-6 pt-4 pb-3 my-6;
+        .title {
+            @apply font-bold;
+        }
+    }
+    .cta {
+        @apply flex my-4 px-6 pt-4 pb-1 rounded-sm bg-pink-200 text-gray-800 duration-700;
+        .cta-icon {
+            width: 50px;
+            @apply mr-2;
+        }
+    }
+    a .cta {
+        &:hover {
+            @apply bg-pink-300;
+        }
+    }
+}
+
+
+/* 
+=====================================
+Special Elements
+=====================================
+*/
+#credits {
+    @apply absolute bottom-0 text-white px-6 py-4;
 }
