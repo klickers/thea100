@@ -1,0 +1,23 @@
+/* 
+=====================================
+Navigation
+=====================================
+*/
+#main-nav {
+    @apply h-screen overflow-y-scroll overflow-x-hidden w-1/5;
+    #logo {
+        @apply px-6 py-8 font-bold text-lg;
+    }
+}
+.nav-links {
+    ul {
+        a {
+            li {
+                @apply py-4 px-6 font-bold bg-gray-50 text-gray-800 duration-700;
+                &:hover {
+                    @apply bg-gray-100;
+                }
+            }
+        }
+    }
+}
